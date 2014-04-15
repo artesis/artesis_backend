@@ -98,13 +98,19 @@ function artesis_backend_form_system_theme_settings_alter(&$form, &$form_state) 
 }
 
 /**
+ * Implements hook_ajax_pre_reservation().
+ */
+function artesis_backend_preprocess_ajax_commands($ajax_commands = array()) {
+  return array_merge($ajax_commands, artesis_backend_refresh_login());
+}
+
+/**
  * Refresh the login box via AJAX.
  *
  * @return Array
  *   Set of AJAX commands.
  */
 function artesis_backend_refresh_login() {
-  drupal_add_js(drupal_get_path('module', 'artesis_backend') . '/js/artesis_backend.scripts.js', 'file');
   // Get the login block related pieces and update the area via AJAX cmd's.
   $commands = array();
   $blocks = array();
@@ -127,6 +133,8 @@ function artesis_backend_refresh_login() {
  *   AJAX-related custom command.
  */
 function ajax_command_artesis_backend_update_login() {
+  drupal_add_js(drupal_get_path('module', 'artesis_backend') . '/js/artesis_backend.scripts.js', 'file');
+
   return array(
     'command' => 'artesis_backend_update_login',
   );
