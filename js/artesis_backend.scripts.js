@@ -16,6 +16,10 @@
     var search_string = document.location.pathname.split('/');
     $("[name='search_block_form']").val(decodeURIComponent(search_string[3]));
     $("[id^='search-block-form']").attr('action', document.location.pathname);
+
+    Drupal.attachBehaviors($(document));
+    Drupal.initExtendedSearchPlaceholders();
+    $('.btn.clear').removeAttr('disabled');
   }
 
 })(jQuery);
