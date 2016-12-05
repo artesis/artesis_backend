@@ -177,3 +177,12 @@ function ajax_command_artesis_backend_update_search() {
     'command' => 'artesis_backend_update_search',
   );
 }
+
+/**
+ * Implements hook_menu_alter().
+ */
+function artesis_backend_menu_alter(&$items) {
+  if (module_exists('nopremium')) {
+    $items['admin/config/workflow/nopremium']['access arguments'] = array('access administration pages');
+  }
+}
