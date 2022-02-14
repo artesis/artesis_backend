@@ -80,16 +80,6 @@ function artesis_backend_permissions_user_default_permissions() {
     'module' => 'nopremium',
   );
 
-  // Exported permission: 'override mkdru premium option'.
-  $permissions['override mkdru premium option'] = array(
-    'name' => 'override mkdru premium option',
-    'roles' => array(
-      'administrator' => 'administrator',
-      'local administrator' => 'local administrator',
-    ),
-    'module' => 'nopremium',
-  );
-
   // Exported permission: 'override mobile premium option'.
   $permissions['override mobile premium option'] = array(
     'name' => 'override mobile premium option',
@@ -139,16 +129,6 @@ function artesis_backend_permissions_user_default_permissions() {
     'roles' => array(
       'administrator' => 'administrator',
       'authenticated user' => 'authenticated user',
-      'local administrator' => 'local administrator',
-    ),
-    'module' => 'nopremium',
-  );
-
-  // Exported permission: 'view full mkdru premium content'.
-  $permissions['view full mkdru premium content'] = array(
-    'name' => 'view full mkdru premium content',
-    'roles' => array(
-      'administrator' => 'administrator',
       'local administrator' => 'local administrator',
     ),
     'module' => 'nopremium',
